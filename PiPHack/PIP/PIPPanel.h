@@ -15,7 +15,7 @@ NS_CLASS_AVAILABLE(10_12, NA)
 - (void)mouseDown:(NSEvent*)arg1;
 - (void)performWindowDragWithEvent:(NSEvent*)arg1;
 - (void)sendEvent:(NSEvent*)arg1;
-- (id)initWithContentRect:(CGRect)arg1;
+- (id)initWithContentRect:(NSRect)arg1;
 
 @end
 

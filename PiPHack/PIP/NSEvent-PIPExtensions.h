@@ -7,6 +7,6 @@
 #import <AppKit/NSEvent.h>
 
 @interface NSEvent (PIPExtensions)
-- (void)setLocationInWindow:(CGPoint)arg1;
+- (void)setLocationInWindow:(NSPoint)arg1 NS_AVAILABLE_MAC(10_12);
 @end
 

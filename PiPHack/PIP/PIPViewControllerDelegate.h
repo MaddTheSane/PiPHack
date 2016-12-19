@@ -17,11 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol PIPViewControllerDelegate <NSObject>
 @optional
-- (BOOL)pipShouldClose:(PIPViewController *)pip;
-- (void)pipDidClose:(PIPViewController *)pip;
-- (void)pipActionPlay:(PIPViewController *)pip;
-- (void)pipActionPause:(PIPViewController *)pip;
-- (void)pipActionStop:(PIPViewController *)pip;
+- (BOOL)pipShouldClose:(PIPViewController *)pip NS_AVAILABLE_MAC(10_12);
+- (void)pipDidClose:(PIPViewController *)pip NS_AVAILABLE_MAC(10_12);
+- (void)pipActionPlay:(PIPViewController *)pip NS_AVAILABLE_MAC(10_12);
+- (void)pipActionPause:(PIPViewController *)pip NS_AVAILABLE_MAC(10_12);
+- (void)pipActionStop:(PIPViewController *)pip NS_AVAILABLE_MAC(10_12);
 @end
 
 NS_ASSUME_NONNULL_END

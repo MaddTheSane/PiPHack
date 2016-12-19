@@ -35,11 +35,11 @@ NS_CLASS_AVAILABLE(10_12, NA)
     struct CGRect _replacementRect;
 }
 
-@property(nonatomic) CGRect replacementRect; // @synthesize replacementRect=_replacementRect;
+@property(nonatomic) NSRect replacementRect; // @synthesize replacementRect=_replacementRect;
 @property(nonatomic, weak, nullable) NSWindow *replacementWindow; // @synthesize replacementWindow=_replacementWindow;
 @property(nonatomic) bool presentOnResize; // @synthesize presentOnResize=_presentOnResize;
 @property(nonatomic) bool useAutoLayout; // @synthesize useAutoLayout=_useAutoLayout;
-@property(nonatomic) CGRect bounds; // @synthesize bounds=_bounds;
+@property(nonatomic) NSRect bounds; // @synthesize bounds=_bounds;
 @property(retain, nonatomic, null_unspecified) id accessibility; // @synthesize accessibility=_accessibility;
 @property(retain, nonatomic, null_unspecified) CAContext *context; // @synthesize context=_context;
 @property(retain, nonatomic, null_unspecified) PIPPanel *panel; // @synthesize panel=_panel;
@@ -47,14 +47,14 @@ NS_CLASS_AVAILABLE(10_12, NA)
 @property(nonatomic, weak, nullable) NSView *replacementView; // @synthesize replacementView=_replacementView;
 @property(nonatomic, weak, nullable) id <PIPViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (unsigned int)copyActiveFencePort;
-- (void)presentViewControllerAsPictureInPicture:(nonnull NSViewController *)arg1;
+- (void)presentViewControllerAsPictureInPicture:(nonnull NSViewController *)arg1 NS_SWIFT_NAME(present(asPictureInPicture:));
 - (void)performWindowDragWithEvent:(nonnull NSEvent*)arg1;
 - (void)setPlaying:(bool)arg1;
 - (bool)playing;
 @property(nonatomic) bool userCanResize;
-@property(nonatomic) struct CGSize maxSize;
-@property(nonatomic) struct CGSize minSize;
-@property(nonatomic) struct CGSize aspectRatio;
+@property(nonatomic) NSSize maxSize;
+@property(nonatomic) NSSize minSize;
+@property(nonatomic) NSSize aspectRatio;
 
 @end
 

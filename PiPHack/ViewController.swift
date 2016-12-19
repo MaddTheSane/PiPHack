@@ -50,7 +50,7 @@ class ViewController: NSViewController {
     /// We also keep an instance of the current view so when the PIPPanel closes we can return it back to its original state.
     func openPIP() {
         if !pipIsActive {
-            pip.presentAsPicture(inPicture: self)
+            pip.present(asPictureInPicture: self)
             pip.setPlaying(true)
             pipIsActive = true
         }
