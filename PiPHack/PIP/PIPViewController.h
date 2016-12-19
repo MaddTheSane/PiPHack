@@ -7,21 +7,23 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 #import "PIPViewControllerDelegate.h"
+#include <stdbool.h>
 
 @class CAContext, NSString, NSView, NSWindow, PIPPanel;
 
+NS_CLASS_AVAILABLE(10_12, NA)
 @interface PIPViewController : NSViewController <NSViewControllerPresentationAnimator>
 {
     struct CGSize _aspectRatio;
     struct CGSize _maxSize;
     struct CGSize _minSize;
-    _Bool _userCanResize;
-    _Bool _playing;
-    _Bool _animateDismissal;
-    _Bool _pipping;
+    bool _userCanResize;
+    bool _playing;
+    bool _animateDismissal;
+    bool _pipping;
     unsigned int _activeFencePort;
-    _Bool _useAutoLayout;
-    _Bool _presentOnResize;
+    bool _useAutoLayout;
+    bool _presentOnResize;
     id <PIPViewControllerDelegate> _delegate;
     NSView *_replacementView;
     NSString *_name;
@@ -33,37 +35,26 @@
     struct CGRect _replacementRect;
 }
 
-@property(nonatomic) struct CGRect replacementRect; // @synthesize replacementRect=_replacementRect;
-@property(nonatomic) __weak NSWindow *replacementWindow; // @synthesize replacementWindow=_replacementWindow;
-@property(nonatomic) _Bool presentOnResize; // @synthesize presentOnResize=_presentOnResize;
-@property(nonatomic) _Bool useAutoLayout; // @synthesize useAutoLayout=_useAutoLayout;
-@property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-@property(retain, nonatomic) id accessibility; // @synthesize accessibility=_accessibility;
-@property(retain, nonatomic) CAContext *context; // @synthesize context=_context;
-@property(retain, nonatomic) PIPPanel *panel; // @synthesize panel=_panel;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(nonatomic) __weak NSView *replacementView; // @synthesize replacementView=_replacementView;
-@property(nonatomic) __weak id <PIPViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) CGRect replacementRect; // @synthesize replacementRect=_replacementRect;
+@property(nonatomic, weak, nullable) NSWindow *replacementWindow; // @synthesize replacementWindow=_replacementWindow;
+@property(nonatomic) bool presentOnResize; // @synthesize presentOnResize=_presentOnResize;
+@property(nonatomic) bool useAutoLayout; // @synthesize useAutoLayout=_useAutoLayout;
+@property(nonatomic) CGRect bounds; // @synthesize bounds=_bounds;
+@property(retain, nonatomic, null_unspecified) id accessibility; // @synthesize accessibility=_accessibility;
+@property(retain, nonatomic, null_unspecified) CAContext *context; // @synthesize context=_context;
+@property(retain, nonatomic, null_unspecified) PIPPanel *panel; // @synthesize panel=_panel;
+@property(copy, nonatomic, null_unspecified) NSString *name; // @synthesize name=_name;
+@property(nonatomic, weak, nullable) NSView *replacementView; // @synthesize replacementView=_replacementView;
+@property(nonatomic, weak, nullable) id <PIPViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (unsigned int)copyActiveFencePort;
-- (void)animateDismissalOfViewController:(id)arg1 fromViewController:(id)arg2;
-- (void)animatePresentationOfViewController:(id)arg1 fromViewController:(id)arg2;
-- (void)presentViewControllerAsPictureInPicture:(id)arg1;
-- (void)performWindowDragWithEvent:(id)arg1;
-- (void)setPlaying:(_Bool)arg1;
-- (_Bool)playing;
-@property(nonatomic) _Bool userCanResize;
+- (void)presentViewControllerAsPictureInPicture:(nonnull NSViewController *)arg1;
+- (void)performWindowDragWithEvent:(nonnull NSEvent*)arg1;
+- (void)setPlaying:(bool)arg1;
+- (bool)playing;
+@property(nonatomic) bool userCanResize;
 @property(nonatomic) struct CGSize maxSize;
 @property(nonatomic) struct CGSize minSize;
 @property(nonatomic) struct CGSize aspectRatio;
-- (void)setRepresentedObject:(id)arg1;
-- (id)representedObject;
-- (void)loadView;
-- (id)nibName;
-- (id)nibBundle;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)init;
 
 @end
 

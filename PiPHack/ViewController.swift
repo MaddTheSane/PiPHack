@@ -16,7 +16,7 @@ class ViewController: NSViewController {
 
     /// Create a new PIPViewController instance, set the delegate to self and set the aspect ratio of the video to 16:9
     lazy var pip: PIPViewController! = {
-        let pip = PIPViewController()!
+        let pip = PIPViewController()
         pip.delegate = self
         pip.aspectRatio = CGSize(width: 16, height: 9)
         pip.userCanResize = false
@@ -64,22 +64,22 @@ class ViewController: NSViewController {
 extension ViewController: PIPViewControllerDelegate {
     
     /// Called when the PIPPanel closes
-    func pipDidClose(_ pip: PIPViewController!) {
+    func pipDidClose(_ pip: PIPViewController) {
         print("Panel closed")
     }
     
     /// Called when the PIPPanel stops playing
-    func pipActionStop(_ pip: PIPViewController!) {
+    func pipActionStop(_ pip: PIPViewController) {
         print("Stopped")
     }
     
     /// Called when the play button in the PIPPanel is clicked
-    func pipActionPlay(_ pip: PIPViewController!) {
+    func pipActionPlay(_ pip: PIPViewController) {
         player.play()
     }
     
     /// Called when the pause button in the PIPPanel is clicked
-    func pipActionPause(_ pip: PIPViewController!) {
+    func pipActionPause(_ pip: PIPViewController) {
         player.pause()
     }
     

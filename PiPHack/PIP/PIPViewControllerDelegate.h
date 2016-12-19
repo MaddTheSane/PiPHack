@@ -9,6 +9,10 @@
 #ifndef PIPViewControllerDelegate_h
 #define PIPViewControllerDelegate_h
 
+#import <Foundation/NSObject.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
 @class PIPViewController;
 
 @protocol PIPViewControllerDelegate <NSObject>
@@ -19,5 +23,7 @@
 - (void)pipActionPause:(PIPViewController *)pip;
 - (void)pipActionStop:(PIPViewController *)pip;
 @end
+
+NS_ASSUME_NONNULL_END
 
 #endif /* PIPViewControllerDelegate_h */

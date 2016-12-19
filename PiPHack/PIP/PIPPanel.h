@@ -4,17 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSPanel.h"
+#import <AppKit/NSPanel.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+NS_CLASS_AVAILABLE(10_12, NA)
 @interface PIPPanel : NSPanel
-{
-}
 
-- (void)mouseUp:(id)arg1;
-- (void)mouseDown:(id)arg1;
-- (void)performWindowDragWithEvent:(id)arg1;
-- (void)sendEvent:(id)arg1;
-- (id)initWithContentRect:(struct CGRect)arg1;
+- (void)mouseUp:(NSEvent*)arg1;
+- (void)mouseDown:(NSEvent*)arg1;
+- (void)performWindowDragWithEvent:(NSEvent*)arg1;
+- (void)sendEvent:(NSEvent*)arg1;
+- (id)initWithContentRect:(CGRect)arg1;
 
 @end
 
+NS_ASSUME_NONNULL_END
